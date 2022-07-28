@@ -23,6 +23,7 @@
   </main>
 </body>
 <script>
+  //Ex1
   document.querySelector("#elementoOndeVoceEsta").parentElement.style.color = "green";
   document.querySelector("#primeiroFilhoDoFilho").innerText = "Um texto a ele";
   document.querySelector("#pai").firstChild;
@@ -30,6 +31,13 @@
   document.querySelector("#elementoOndeVoceEsta").parentElement.childNodes[4].textContent;
   document.querySelector("#elementoOndeVoceEsta").nextElementSibling;
   document.querySelector("#pai").childNodes[5];
+
+  //Ex2
+  document.querySelector("#elementoOndeVoceEsta").parentElement.appendChild(document.createElement("section"));
+  document.querySelector("#elementoOndeVoceEsta").appendChild(document.createElement("section"));
+  document.querySelector("#primeiroFilhoDoFilho").appendChild(document.createElement("section"));
+  document.querySelector("#primeiroFilhoDoFilho").children[0].id = "filhao";
+  document.querySelector("#filhao").parentElement.parentElement.parentElement.children[2];
 </script>
 
 </html>
