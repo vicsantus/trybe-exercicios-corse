@@ -38,6 +38,23 @@
   document.querySelector("#primeiroFilhoDoFilho").appendChild(document.createElement("section"));
   document.querySelector("#primeiroFilhoDoFilho").children[0].id = "filhao";
   document.querySelector("#filhao").parentElement.parentElement.parentElement.children[2];
+
+
+  //Ex3
+  let paiDoPai = document.querySelector("#paiDoPai");
+  let filhos = document.querySelector("#paiDoPai").children;
+  let pai = document.querySelector("#pai");
+  let filhosDoPai = document.querySelector("#pai").children;
+  for (let x of filhos) {
+    if (x.id !== "pai") {
+      paiDoPai.removeChild(x);
+    }
+  }
+  for (let x = 0; x < filhosDoPai.length; x += 1) {
+    if ((filhosDoPai[x].id !== "elementoOndeVoceEsta") || (filhosDoPai[x].id !== "primeiroFilhoDoFilho")) {
+      pai.removeChild(filhosDoPai[x]);
+    }
+  }
 </script>
 
 </html>
