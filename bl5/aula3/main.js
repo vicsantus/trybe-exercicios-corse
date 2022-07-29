@@ -44,7 +44,7 @@ input.addEventListener('keyup', digitadoNoInput);
 // redirecione para alguma página;
 // 4.1. Que tal redirecionar para seu portfólio?
 function webClick2() {
-  myWebpage.addEventListener('click', webClick1)
+  myWebpage.addEventListener('click', webClick1);
 }
 
 function webClick1() {
@@ -57,7 +57,16 @@ myWebpage.addEventListener('dblclick', webClick2);
 
 // 5. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
+function naoMeToqueNimim(origem) {
+  origem.target.style.color = '#2fc18c';
+}
+function tchau(origem) {
+  origem.target.style.color = 'white';
+}
 
+
+myWebpage.addEventListener('mouseover', naoMeToqueNimim);
+myWebpage.addEventListener('mouseout', tchau);
 // Segue abaixo um exemplo do uso de event.target:
 
 
