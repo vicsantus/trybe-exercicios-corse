@@ -1,10 +1,6 @@
 import React from 'react';
 import './App.css';
 
-function geraGarai() {
-  return Math.round(Math.random * 10 - 1) + 1;
-}
-
 class App extends React.Component {
   constructor() {
     super();
@@ -23,9 +19,8 @@ class App extends React.Component {
   }
 
   gerador() {
-    const x = geraGarai();
-    this.setState((atual, _props) => ({
-      valor: atual.valor + x, 
+    this.setState((_atual, _props) => ({
+      valor: Math.round(Math.random() * 10 - 1) + 1, 
     }));
   }
 
@@ -33,8 +28,7 @@ class App extends React.Component {
     /* No React, precisamos dizer explicitamente que queremos uma função da nossa classe
 
     através da sintaxe `this.minhaFuncao` para usá-la num evento */
-    const { cliques } = this.state;
-    const { valor } = this.state;
+    const { cliques, valor } = this.state;
     const cor = cliques % valor === 0 ? { color: 'green' } : { color: 'red' };
     return (
       <>
@@ -44,7 +38,7 @@ class App extends React.Component {
         <button type="button" onClick={this.handleClick}>
           Clicks!
         </button>
-        <p style={cor}>Clicou: {cliques}</p>;{console.log(cor, valor, this)}
+        <p style={cor}>Clicou: {cliques}</p>
       </>
     );
   }
