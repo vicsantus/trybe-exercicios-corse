@@ -1,9 +1,11 @@
-import { screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import App from './App';
+import App, { About } from './App';
 import renderWithRouter from './renderWithRouter';
 
+
+describe('teste da aplicação toda', () => {
 it('deve renderizar o componente App', () => {
   renderWithRouter(<App />);
 
@@ -26,4 +28,26 @@ it('deve renderizar o componente Sobre', () => {
   const aboutTitle = screen.getByRole('heading',
     { name: 'Você está na página Sobre' });
   expect(aboutTitle).toBeInTheDocument();
+})
+
+it('deve testar um caminho não existente e a renderização do Not Found', () => {
+  const { history } = renderWithRouter(<App />);
+
+  act(() => {
+    history.push('/google.com/');
+  })
+
+  const notFoundTitle = screen.getByRole('heading',
+    { name: 'Página não encontrada' });
+  expect(notFoundTitle).toBeInTheDocument();
 });
+
+it('deve renderizar o componente About (apenas componente)', () => {
+  renderWithRouter(<About />);
+
+  const aboutTitle = screen.getByRole('heading',
+    { name: 'Você está na página Sobre' });
+  expect(aboutTitle).toBeInTheDocument();
+});
+})
+
