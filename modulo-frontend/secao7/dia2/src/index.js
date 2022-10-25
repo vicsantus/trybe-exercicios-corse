@@ -4,19 +4,17 @@ import { Provider } from 'react-redux';
 import { legacy_createStore as createStore } from 'redux';
 import App from './App';
 import './index.css';
+import rootReducers from './redux/reducers/index';
 import reportWebVitals from './reportWebVitals';
 
-const INITIAL_STATE = { count: 0 };
-const reducer = (state = INITIAL_STATE, _action) => state;
 /* eslint-disable no-underscore-dangle */
-  const store = createStore(
-   reducer, /* preloadedState, */
-   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
+const store = createStore(
+  rootReducers, /* preloadedState, */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 /* eslint-enable */
 
 export default store;
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
