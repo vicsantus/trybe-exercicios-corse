@@ -172,7 +172,7 @@ GROUP BY first_name
 HAVING nomes_cadastrados > 3;
 
 -- Observação: o alias não funciona com strings para o HAVING,
--- então use o underline ("_") para separar palavras
+-- então use o underline ("_") para separar palavras ou crase
 -- Ou seja, o exemplo abaixo não vai funcionar
 SELECT first_name, COUNT(*) AS 'nomes cadastrados'
 FROM sakila.actor
