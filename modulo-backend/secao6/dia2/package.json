@@ -1,0 +1,23 @@
+{
+  "name": "dia2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "10.0",
+    "express": "4.17",
+    "mysql2": "2.3",
+    "nodemon": "2.0",
+    "sequelize": "6.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "6.2"
+  }
+}
