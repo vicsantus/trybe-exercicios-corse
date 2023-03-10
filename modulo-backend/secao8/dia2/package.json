@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@tsconfig/node16": "1.0",
+    "mysql2": "2.3",
+    "sequelize-cli": "6.2"
+  },
+  "dependencies": {
+    "@types/sequelize": "4.28",
+    "dotenv": "10.0",
+    "sequelize": "6.3"
+  },
+  "scripts": {
+    "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create"
+  },
+  "name": "dia2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
