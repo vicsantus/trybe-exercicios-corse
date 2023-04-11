@@ -19,8 +19,12 @@ use('nomeDoBanco');
 
 db.books.count();
 
-db.books.find({ status: 'PUBLISH' }).count();
+// db.books.find({ status: 'PUBLISH' }).count();
 
-db.books.find({}, { title: 1, _id: 0, isbn: 1, pageCount: 1 }).limit(3);
+// db.books.find({}, { title: 1, _id: 0, isbn: 1, pageCount: 1 }).limit(3);
 
-db.books.find({ status: 'MEAP' }, { title: 1, authors: 1, status: 1 }).limit(10);
+// db.books.find({ status: 'MEAP' }, { title: 1, authors: 1, status: 1 }).limit(10);
+
+
+db.books.find({ $or: [{ status: { $ne: "PUBLISH" } }, { publishedDate: { $exists: false } }] }).sort({ pageCount: -1, title: 1 });
+
