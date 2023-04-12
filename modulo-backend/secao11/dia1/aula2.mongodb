@@ -1,31 +1,39 @@
 use('nomeDoBanco');
 
-db.filmes.find({ ano: { $lt: 2000 } });
+db.filmes.find();
 
-db.filmes.find({ ano: { $lte: 2000 } });
+// db.filmes.find({ ano: { $lt: 2000 } });
 
-db.filmes.find({ ano: { $gt: 1993 } });
+// db.filmes.find({ ano: { $lte: 2000 } });
 
-db.filmes.find({ ano: { $gte: 1993 } });
+// db.filmes.find({ ano: { $gt: 1993 } });
 
-db.filmes.find({ ano: { $gte: 1993, $lte: 2000 } });
+// db.filmes.find({ ano: { $gte: 1993 } });
 
-db.filmes.find({ ano: { $eq: 1993 } });
+// db.filmes.find({ ano: { $gte: 1993, $lte: 2000 } });
 
-db.filmes.find({ 'avaliacao.bom': { $eq: 7 } });
+// db.filmes.find({ ano: { $eq: 1993 } });
 
-db.filmes.find({ 'avaliacao.bom': { $not: { $eq: 7 } } });
+// db.filmes.find({ 'avaliacao.bom': { $eq: 7 } });
 
-db.filmes.find({ 'avaliacao.bom': { $ne: 7 } });
+// db.filmes.find({ 'avaliacao.bom': { $not: { $eq: 7 } } });
 
-db.filmes.find({ 'avaliacao.bom': { $ne: 7 } });
+// db.filmes.find({ 'avaliacao.bom': { $ne: 7 } });
 
-db.filmes.find({ ano: { $in: [2001, 1968, 1995] } });
+// db.filmes.find({ 'avaliacao.bom': { $ne: 7 } });
 
-db.filmes.find({ ano: { $nin: [2013, 2008] } });
+// db.filmes.find({ ano: { $in: [2001, 1968, 1995] } });
 
-db.filmes.find({ $and: [{ ano: { $gt: 2000 } }, { 'avaliacao.bom': { $gte: 8 } }] });
+// db.filmes.find({ ano: { $nin: [2013, 2008] } });
 
-db.filmes.find({ $or: [{ ano: { $gt: 2000 } }, { 'avaliacao.bom': { $gte: 8 } }] });
+// db.filmes.find({ $and: [{ ano: { $gt: 2000 } }, { 'avaliacao.bom': { $gte: 8 } }] });
 
-db.filmes.find({ $nor: [{ diretor: 'Michael Bay' }, { 'avaliacao.ruim': 10 }] });
+// db.filmes.find({ $or: [{ ano: { $gt: 2000 } }, { 'avaliacao.bom': { $gte: 8 } }] });
+
+// db.filmes.find({ $nor: [{ diretor: 'Michael Bay' }, { 'avaliacao.ruim': 10 }] });
+
+// db.filmes.find({ $expr: { $gt: ['$avaliacao.bom', '$avaliacao.ruim'] } })
+
+// db.filmes.find({ diretor: { $regex: /spie/i } })
+
+db.filmes.find({ 'avaliacao.bom': { $mod: [2, 0], $gte: 6 } }).sort({ 'avaliacao.bom': -1 })
