@@ -4,11 +4,10 @@ b = 5
 print(a + b)
 print(a - b)
 print(a * b)
-print(a ** b)
+print(a**b)
 print(a / b)
 print(a // b)
 print(b % a)
-
 
 
 hours = 6
@@ -32,12 +31,12 @@ trybe_course.append("Ciência da Computação")
 trybe_course[0] = "Fundamentos"
 
 var = set()
-var.add('seu_nome')
+var.add("seu_nome")
 
 info = {
-  "personagem": "Margarida",
-  "origem": "Pato Donald",
-  "nota": "Namorada do personagem principal nos quadrinhos do Pato Donald",
+    "personagem": "Margarida",
+    "origem": "Pato Donald",
+    "nota": "Namorada do personagem principal nos quadrinhos do Pato Donald",
 }
 
 info.update({"recorrente": "Sim"})
@@ -59,5 +58,5 @@ for n in range(1, fat + 1):
 print(f"Fatorial de {fat}: {x}")
 
 ratings = [6, 8, 5, 9, 10]
-print(f'{[rating * 10 for rating in ratings]}')
-print(f'Multiplos de 3: {[mult for mult in ratings if mult % 3 == 0]}')
+print(f"{[rating * 10 for rating in ratings]}")
+print(f"Multiplos de 3: {[mult for mult in ratings if mult % 3 == 0]}")
